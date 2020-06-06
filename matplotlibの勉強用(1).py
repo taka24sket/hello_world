@@ -181,15 +181,7 @@ plt.errorbar(x, y, yerr=dy,fmt="pk")#yerr；エラーの大きさ、fmt；点の
 plt.errorbar(x, y, yerr=dy,fmt="ok",ecolor="lightgray",
              elinewidth=3,capsize=5)#capsize；末端の線の長さ
 
-#連続誤差
-from sklearn.gaussian_process import GaussianProcessRegressor
-model = lambda x: x*np.sin(x)
-xdata = np.array([1,3,5,6,8])
-ydata = model(xdata)
-"""zdata = xdata*np.sin(xdata)#ydataと同じ意味"""
 
-gp = GaussianProcessRegressor(corr="cubic",theta0=1e-2,thetal=1e-4,thetaU=1E-1,
-                      random_start=100)
 
 
 
